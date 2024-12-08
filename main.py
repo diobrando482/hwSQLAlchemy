@@ -3,8 +3,7 @@ from db.database import async_session, init_db
 from operations import add_author, add_genre, add_book, get_books, get_book_by_id, delete_book
 
 async def main():
-    await init_db()  # создаем таблицы
-
+    await init_db()  
     async with async_session() as session:
         author = await add_author(session, "Толстой")
         genre = await add_genre(session, "Роман")
